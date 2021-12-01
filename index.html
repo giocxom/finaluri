@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css">
-    <style type="text/css">
+    <style>
       .my_modal {
         position: fixed;
         top: 0;
@@ -176,7 +176,7 @@
       <div class="margin">
         <div class="header">
           <div class="huerotate">
-            <img src="img/Olarm Logo.png" alt="logo" />
+            <img src="img/Olarm Logo.png" alt="logo"/>
           </div>
           <div class="nav">
             <a style="color: whitesmoke; text-decoration: overline;"  href="index.html"><p>HOME</p></a>
@@ -185,16 +185,12 @@
             >
           </div>
           <div class="sign">
-            <a href="#modal_open"><button class="button">Sign up</button></a>
+            <a href="#modal_open" class="button">Sign up</a>
             <div id="modal_open" class="my_modal">
               <div class="my_modal-dialog">
                 <div class="my_modal-content">
                   <div class="my_modal-header">
-                    <img
-                      class="my_modal-title huerotate"
-                      src="img/Olarm Logo.png"
-                      alt=""
-                    />
+                    <img class="my_modal-title huerotate" src="img/Olarm Logo.png" alt=""/>
                     <p class="my_modal-title">Register to knew something more</p>
                     <a href="#" title="Back" class="close">✕</a>
                   </div>
@@ -243,7 +239,7 @@
 
                       <label for="About">About</label>
                       <input
-                        type="about"
+                        type="text"
                         id="About"
                         name="About you"
                         placeholder="❤ About you....."
@@ -274,39 +270,31 @@
                 </div>
               </div>
             </div>
-            <a href="#modal_close"><button class="button">Login</button></a>
+            <a href="#modal_close" class="button">Login</a>
             <div id="modal_close" class="my_modal">
               <div class="my_modal-dialog">
                 <div class="my_modal-content">
                   <div class="my_modal-header">
-                    <img
-                      class="my_modal-title huerotate"
-                      src="img/Olarm Logo.png"
-                      alt=""
-                    />
+                    <img class="my_modal-title huerotate" src="img/Olarm Logo.png" alt=""/>
                     <p class="my_modal-title">Register to be with us</p>
                     <a href="#" title="Back" class="close">✕</a>
                   </div>
                   <div class="my_modal-body">
-                    <form action="">
-                    <label for="Login Email">Login</label>
+                    <form action="#">
+                    <label for="LoginEmail">Login</label>
                       <input
                         type="text"
-                        id="Login email"
+                        id="Loginemail"
                         name="Login email"
-                        placeholder="✎ Your Login or Email ✉"
-                      />
-
+                        placeholder="✎ Your Login or Email ✉"/>
                       <label for="password">Password</label>
                       <input
                         type="text"
                         id="Password"
                         name="Password"
-                        placeholder="✱ Your password ✱"
-                      />
+                        placeholder="✱ Your password ✱"/>
                     </select>
-
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Submit"/>
                     </form>
                   </div>
                 </div>
