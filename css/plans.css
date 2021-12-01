@@ -2,13 +2,13 @@ body {
   background-image: url(../img/body.jpg);
   background-repeat: no-repeat;
   background-size: auto;
-  font-family: 'Paytone One', sans-serif;
+  font-family: "Paytone One", sans-serif;
 }
 p {
-  font-family: 'Playball', cursive;
+  font-family: "Playball", cursive;
 }
 button {
-  font-family: 'Paytone One', sans-serif;
+  font-family: "Paytone One", sans-serif;
 }
 .huerotate {
   filter: invert(180%);
@@ -48,6 +48,10 @@ button {
   color: rgba(255, 0, 0, 0.411);
   width: 100px;
   height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .button:hover {
   border: 1px solid white;
@@ -202,14 +206,14 @@ button {
   margin-bottom: 15px;
   color: white;
 }
-.text > p{
+.text > p {
   font-size: 20px;
   color: white;
 }
 .png-div {
   position: absolute;
 }
-.png-div:hover{
+.png-div:hover {
   transform: scale(1.05);
 }
 .first {
@@ -240,11 +244,31 @@ button {
   animation-timing-function: linear;
 }
 @keyframes example {
-  0%   {background-color:rgb(0, 204, 255); left:0px; top:0px;}
-  25%  {background-color:rgb(255, 255, 91); left:1000px; top:0px;}
-  50%  {background-color:rgb(114, 114, 179); left:200px; top:1000px;}
-  75%  {background-color:rgb(10, 255, 10); left:0px; top:1000px;}
-  100% {background-color:rgb(255, 64, 64); left:0px; top:0px;}
+  0% {
+    background-color: rgb(0, 204, 255);
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background-color: rgb(255, 255, 91);
+    left: 1000px;
+    top: 0px;
+  }
+  50% {
+    background-color: rgb(114, 114, 179);
+    left: 200px;
+    top: 1000px;
+  }
+  75% {
+    background-color: rgb(10, 255, 10);
+    left: 0px;
+    top: 1000px;
+  }
+  100% {
+    background-color: rgb(255, 64, 64);
+    left: 0px;
+    top: 0px;
+  }
 }
 .animation2 {
   width: 5px;
@@ -259,11 +283,31 @@ button {
   animation-timing-function: linear;
 }
 @keyframes example2 {
-  0%   {background-color:rgb(225, 0, 255); left:600px; top:500px;}
-  25%  {background-color:rgb(25, 0, 255); left:800px; top:0px;}
-  50%  {background-color:rgb(255, 0, 64); left:1000px; top:800px;}
-  75%  {background-color:rgb(0, 195, 255); left:0px; top:100px;}
-  100% {background-color:rgb(255, 255, 255); left:200px; top:300px;}
+  0% {
+    background-color: rgb(225, 0, 255);
+    left: 600px;
+    top: 500px;
+  }
+  25% {
+    background-color: rgb(25, 0, 255);
+    left: 800px;
+    top: 0px;
+  }
+  50% {
+    background-color: rgb(255, 0, 64);
+    left: 1000px;
+    top: 800px;
+  }
+  75% {
+    background-color: rgb(0, 195, 255);
+    left: 0px;
+    top: 100px;
+  }
+  100% {
+    background-color: rgb(255, 255, 255);
+    left: 200px;
+    top: 300px;
+  }
 }
 .animation3 {
   width: 12px;
@@ -278,11 +322,31 @@ button {
   animation-timing-function: linear;
 }
 @keyframes example3 {
-  0%   {background-color:red; left:0px; top:1000px;}
-  25%  {background-color:yellow; left:800px; top:0px;}
-  50%  {background-color:rgb(255, 0, 0); left:800px; top:10px;}
-  75%  {background-color:rgb(255, 251, 0); left:0px; top:800px;}
-  100% {background-color:red; left:100px; top:1000px;}
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 1000px;
+  }
+  25% {
+    background-color: yellow;
+    left: 800px;
+    top: 0px;
+  }
+  50% {
+    background-color: rgb(255, 0, 0);
+    left: 800px;
+    top: 10px;
+  }
+  75% {
+    background-color: rgb(255, 251, 0);
+    left: 0px;
+    top: 800px;
+  }
+  100% {
+    background-color: red;
+    left: 100px;
+    top: 1000px;
+  }
 }
 .animation4 {
   width: 8px;
@@ -297,11 +361,31 @@ button {
   animation-timing-function: linear;
 }
 @keyframes example4 {
-  0%   {background-color:red; left:800px; top:200px;}
-  25%  {background-color:yellow; left:0px; top:800px;}
-  50%  {background-color:blue; left:100px; top:1000px;}
-  75%  {background-color:green; left:200px; top:100px;}
-  100% {background-color:red; left:800px; top:0px;}
+  0% {
+    background-color: red;
+    left: 800px;
+    top: 200px;
+  }
+  25% {
+    background-color: yellow;
+    left: 0px;
+    top: 800px;
+  }
+  50% {
+    background-color: blue;
+    left: 100px;
+    top: 1000px;
+  }
+  75% {
+    background-color: green;
+    left: 200px;
+    top: 100px;
+  }
+  100% {
+    background-color: red;
+    left: 800px;
+    top: 0px;
+  }
 }
 .animation5 {
   width: 10px;
@@ -316,10 +400,29 @@ button {
   animation-timing-function: linear;
 }
 @keyframes example5 {
-  0%   {background-color:red; left:0px; top:1000px;}
-  25%  {background-color:yellow; left:800px; top:20px;}
-  50%  {background-color:blue; left:120px; top:800px;}
-  75%  {background-color:green; left:0px; top:100px;}
-  100% {background-color:red; left:200px; top:800px;
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 1000px;
+  }
+  25% {
+    background-color: yellow;
+    left: 800px;
+    top: 20px;
+  }
+  50% {
+    background-color: blue;
+    left: 120px;
+    top: 800px;
+  }
+  75% {
+    background-color: green;
+    left: 0px;
+    top: 100px;
+  }
+  100% {
+    background-color: red;
+    left: 200px;
+    top: 800px;
   }
 }
