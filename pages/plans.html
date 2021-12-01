@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olarm</title>
+    <link rel="icon" type="image/x-icon" href="../img/kisspng-royalty-free-logo-dragon-5af7c7409a9693.0700452215261878406332.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Playball&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/plans.css" />
+    <link rel="stylesheet" href="../css/responsive-plans.css">
+    <style type="text/css">
+        .my_modal {
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 1050;
+          display: none;
+          margin: 0;
+          padding: 0;
+        }
+        .my_modal:target {
+          display: block;
+          overflow-y: auto;
+        }
+        .my_modal-dialog {
+          position: relative;
+          width: auto;
+          margin: 10px;
+        }
+        @media (min-width: 576px) {
+          .my_modal-dialog {
+            max-width: 460px;
+            margin: 30px auto;
+          }
+        }
+        .my_modal-content {
+          position: relative;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          border-radius: 6px;
+          outline: 0;
+          background-color: white;
+          background-color: rgb(0, 0, 0);
+        }
+        @media (min-width: 768px) {
+          .my_modal-content {
+            -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+          }
+        }
+        .my_modal-header {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 14px 14px 4px;
+        }
+        .my_modal-header > img {
+          width: 150px;
+          margin-bottom: 30px;
+        }
+        .my_modal-header > a{
+          background-color: red;
+        }
+        .my_modal-title {
+          color: rgba(255, 0, 0, 0.411);
+          margin-top: 0;
+          margin-bottom: 0;
+          line-height: 2;
+          font-size: 1.25rem;
+          border-bottom: 1px solid #d4d4d4;
+          font-weight: bold;
+        }
+        .close {
+          padding: 1px 5px 0;
+          border: 1px solid #000;
+          border-radius: 50%;
+          font-family: sans-serif;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 1;
+          color: #000;
+          text-shadow: 0 1px 0 #fff;
+          opacity: 0.5;
+          text-decoration: none;
+          top: 4px;
+          right: 4px;
+          position: absolute;
+        }
+        .close:focus,
+        .close:hover {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+          opacity: 0.75;
+        }
+        .my_modal-body {
+          position: relative;
+          -webkit-box-flex: 1;
+          -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+          padding: 15px;
+        }
+        input[type="text"],
+        select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        input[type="Email"]{
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        input[type="about"]{
+          width: 100%;
+          height: 100px;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+  
+        input[type="submit"] {
+          width: 100%;
+          background-color: rgba(255, 0, 0, 0.411);
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        input[type="submit"]:hover{
+          transform: scale(1.05);
+        } 
+  
+        input[type="submit"]:hover {
+          background-color: rgba(255, 0, 0, 0.411);
+        }
+        label{
+          color:rgba(255, 0, 0, 0.411);
+        }
+      </style>
+    </head>
+  
+    <body>
+      <header>
+        <div class="margin">
+          <div class="header">
+            <div>
+              <img  class="huerotate" src="../img/Olarm Logo.png" alt="logo" />
+            </div>
+            <div class="nav">
+              <a href="../index.html"><p>HOME</p></a>
+              <a href="meetolarm.html"><p>GET OLARM</p></a>
+              <a style="color: whitesmoke; text-decoration: overline;" href="plans.html"><p>ABOUT</p></a
+              >
+            </div>
+            <div class="sign">
+              <a href="#modal_open"><button class="button">Sign up</button></a>
+              <div id="modal_open" class="my_modal">
+                <div class="my_modal-dialog">
+                  <div class="my_modal-content">
+                    <div class="my_modal-header">
+                      <img
+                        class="my_modal-title huerotate"
+                        src="../img/Olarm Logo.png"
+                        alt=""
+                      />
+                      <p class="my_modal-title">Register to knew something more</p>
+                      <a href="#" title="Back" class="close">✕</a>
+                    </div>
+                    <div class="my_modal-body">
+                      <form action="/action_page.php">
+                        <label for="Email">Email</label>
+                        <input
+                          type="Email"
+                          id="Email"
+                          name="Email"
+                          placeholder="✉ Your Email.."
+                        />
+                        
+                        
+                        <label for="Login">Login</label>
+                        <input
+                          type="text"
+                          id="Login"
+                          name="Login"
+                          placeholder="✎ Your Login.."
+                        />
+  
+                        <label for="firstname">Firstname</label>
+                        <input
+                          type="text"
+                          id="firstname"
+                          name="First name"
+                          placeholder="✎ Your name..."
+                        />
+                        
+  
+                        <label for="lname">Last Name</label>
+                        <input
+                          type="text"
+                          id="lname"
+                          name="lastname"
+                          placeholder="✎ Your last name.."
+                        />
+                        <label for="password">Password</label>
+                        <input
+                          type="text"
+                          id="password"
+                          name="password"
+                          placeholder="✱ Your password ✱"
+                        />
+  
+                        <label for="About">About</label>
+                        <input
+                          type="about"
+                          id="About"
+                          name="About you"
+                          placeholder="❤ About you....."
+                        />
+  
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                          <option value="australia">Australia</option>
+                          <option value="canada">Argentina</option>
+                          <option value="usa">Belgium</option>
+                          <option value="australia">Canada</option>
+                          <option value="canada">Cuba</option>
+                          <option value="usa">Duchland</option>
+                          <option value="australia">Armenia</option>
+                          <option value="canada">Azeirbajan</option>
+                          <option value="usa">Georgia</option>
+                          <option value="australia">Turkey</option>
+                          <option value="canada">Iran</option>
+                          <option value="usa">USA</option>
+                          <option value="australia">Egypt</option>
+                          <option value="canada">China</option>
+                          <option value="usa">Japan</option>
+                        </select>
+  
+                        <input type="submit" value="Submit" />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="#modal_close"><button class="button">Login</button></a>
+              <div id="modal_close" class="my_modal">
+                <div class="my_modal-dialog">
+                  <div class="my_modal-content">
+                    <div class="my_modal-header">
+                      <img
+                        class="my_modal-title huerotate"
+                        src="../img/Olarm Logo.png"
+                        alt=""
+                      />
+                      <p class="my_modal-title">Register to be with us</p>
+                      <a href="#" title="Back" class="close">✕</a>
+                    </div>
+                    <div class="my_modal-body">
+                      <form action="">
+                      <label for="Login Email">Login</label>
+                        <input
+                          type="text"
+                          id="Login email"
+                          name="Login email"
+                          placeholder="✎ Your Login or Email ✉"
+                        />
+  
+                        <label for="password">Password</label>
+                        <input
+                          type="text"
+                          id="Password"
+                          name="Password"
+                          placeholder="✱ Your password ✱"
+                        />
+                      </select>
+  
+                      <input type="submit" value="Submit" />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="topnav" id="myTopnav">
+          <a href=""  class="active"> <img class="huerotate"  src="../img/Olarm Logo.png" alt="logo"> </a>
+          <a href="../index.html">HOME</a>
+          <a href="meetolarm.html">GET OLARM</a>
+          <a style="color: whitesmoke; text-decoration: overline;" href="plans.html">ABOUT</a>
+          <a href="sign.-in.html">SING IN</a>
+          <a href="log-in.html">LOGIN</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+      </header>
+      <section>
+          <div class="section1-main-div">
+            <div class="p-div">
+            <p>Tailored Total Home Protection</p>
+            <h2>Next Generation Home <br> Alarm System</h2>
+            </div>
+            <div class="img-div">
+               <img class="img1" src="../img/Group 1456.jpg" alt="">
+               <img class="img2" src="../img/Group 1452.jpg" alt="">
+            </div>
+            <div class="img-div">
+              <img class="img2"src="../img/Group 1455.jpg" alt="">
+              <img class="img1" src="../img/Group 1457.jpg" alt="">
+            </div>
+          </div>
+      </section>
+      <section>
+        <div class="section2-main-div">
+          <div class="text">
+            <h4>Smart Sensor</h4>
+            <p>This is your first all-in-one sensor on the market. Motion, 
+              Water Leak, Smoke Alarm, Temperature and Humidity 
+              are some of the features that can be controlled through 
+              this Smart Sensor.</p>
+          </div>
+          <div class="png-div first" > <img class="first-img" src="../img/Group 11432.png" alt=""></div>
+          <div class="png-div second" > <img class="second-img" src="../img/Group 11437.png" alt=""></div>
+          <div class="png-div third" > <img class="third-img" src="../img/Group 11439.png" alt=""></div>
+          <div class="png-div fourth" > <img class="fourth-img" src="../img/Mask Group 9.png" alt=""></div>
+          <div class="animation"></div>
+          <div class="animation2"></div>
+          <div class="animation3"></div>
+          <div class="animation4"></div>
+          <div class="animation5"></div>
+        </div>
+      </section>
+      <footer>
+        <div class="footer-main">
+            <div class="footer-main-div1">
+              <div class="footer-main-div1-text"> 
+                <img  class="huerotate" src="../img/Olarm Logo.png" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy </p>
+              </div>
+              <div class="footer-main-div1-img">
+                <a href="https://www.facebook.com/"><img src="../img/facebook (2).png" alt="facebook"></a>
+                <a href="https://twitter.com/?lang=en"><img src="../img/twitter-3.png" alt="twitter"></a>
+                <a href="https://www.youtube.com/"><img src="../img/youtube (1).png" alt="youtube"></a>
+                <a href="https://www.linkedin.com/?trk=public_post_nav-header-logo"><img src="../img/linkedin.png" alt="linkedin"></a>
+              </div>
+            </div>
+            <div class="footer-main-div-p">
+              <p>Meet Olarm</p>
+              <p>Features</p>
+              <p>Plans</p>
+              <p>Media</p>
+              <p>Blog</p>
+            </div>
+            <div class="footer-main-div-p">
+              <p>Contact Us</p>
+              <p>Terms of Service</p>
+              <p>Privacy</p>
+              <p>Careers</p>
+              <p>FAQ's</p>
+            </div>
+            <div class="footer-main-div-subscribe">
+               <h4>Subscribe</h4>
+               <p>Get offers and stay up-to-date</p>
+                <form class="form" action="#" method="post">
+                <label for="subject"></label>
+                <input class="footer-input" type="email-2" placeholder="Email..." id="Email">
+                <button class="footer-button">Subscribe</button>
+               </form>
+               <h5>Copyrights @2020 Olarm, Inc.</h5>
+            </div>
+        </div>
+      </footer>
+      <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>
+    </body>
+  </html>
