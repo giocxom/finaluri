@@ -47,6 +47,9 @@ button {
   color: rgba(255, 0, 0, 0.411);
   width: 100px;
   height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .button:hover {
   border: 1px solid white;
