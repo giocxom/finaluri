@@ -87,19 +87,27 @@
         margin-bottom: 10px;
       }
       .section-img {
-        justify-content: space-around;
-          flex-wrap: wrap;
+        justify-content: flex-start;
+        flex-wrap: wrap;
         margin-bottom: 10px;
+      }
+      .section-img > img {
+        margin-right: 15px;
+        margin-bottom: 15px;
       }
       .section-img-2 {
           flex-wrap: wrap;
       }
       .section-img-2 > img {
-        margin-right: 10px;
+        margin-right: 15px;
+        margin-bottom: 15px;
       }
       .download {
           display: flex;
           flex-wrap: wrap;
+      }
+      .download > a {
+        margin-right: 2px;
       }
       .first-info {
           height: 420px;
@@ -113,6 +121,12 @@
       .first-info > a {
         width: 150px;
         height: 50px;
+      }
+      .nav2-div > h5 {
+        font-size: 7px;
+      }
+      .nav2-div > p {
+        font-size: 7px;
       }
 
 }
